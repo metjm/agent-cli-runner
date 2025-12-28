@@ -1,0 +1,24 @@
+[package]
+name = "agent-cli-runner"
+version = "0.1.0"
+edition = "2021"
+description = "A Rust library for spawning and interacting with Codex, Gemini CLI, and Claude Code"
+license = "MIT"
+repository = "https://github.com/onegc/agent-cli-runner"
+keywords = ["cli", "agent", "claude", "codex", "gemini"]
+categories = ["api-bindings", "command-line-utilities"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+nursery = { level = "warn", priority = -1 }
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
