@@ -1,0 +1,10 @@
+=== New Claude invocation at SystemTime { tv_sec: 1766400155, tv_nsec: 278376958 } ===
+Prompt: Help me write a test
+[timeout] activity_timeout=300s, overall_timeout=1800s
+[stdout] {"type":"system","subtype":"init","cwd":"/workspaces/legacy-test","session_id":"legacy-session-001","tools":["Bash","Read"],"model":"claude-opus-4-5-20251101"}
+[stdout] {"type":"assistant","message":{"model":"claude-opus-4-5-20251101","id":"msg_legacy_001","type":"message","role":"assistant","content":[{"type":"text","text":"I'll help you write a test."}],"usage":{"input_tokens":50,"output_tokens":15}}}
+[stdout] {"type":"assistant","message":{"model":"claude-opus-4-5-20251101","id":"msg_legacy_001","type":"message","role":"assistant","content":[{"type":"tool_use","id":"toolu_legacy_001","name":"Bash","input":{"command":"npm test"}}],"usage":{"input_tokens":60,"output_tokens":20}}}
+[stdout] {"type":"user","message":{"role":"user","content":[{"type":"tool_result","content":"Tests passed!","is_error":false,"tool_use_id":"toolu_legacy_001"}]}}
+[stdout] {"type":"result","exit_code":0,"usage":{"input_tokens":200,"output_tokens":50}}
+[stderr] Some stderr output
+[stdout] Not valid JSON - this is a CLI message

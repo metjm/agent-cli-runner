@@ -1,0 +1,21 @@
+=== Agent stream log started at 2025-12-23 02:24:08 (run 20251223-022408) ===
+[02:24:08.467][claude][start] command: claude -p --output-format stream-json --verbose (with context)
+[02:24:09.562][claude][stdout] {"type":"system","subtype":"init","cwd":"/workspaces/test","session_id":"test-session-001","tools":["Bash","Read","Write"],"model":"claude-opus-4-5-20251101","permissionMode":"bypassPermissions","claude_code_version":"2.0.76"}
+[02:24:14.897][claude][stdout] {"type":"assistant","message":{"model":"claude-opus-4-5-20251101","id":"msg_001","type":"message","role":"assistant","content":[{"type":"text","text":"I'll help you with that task."}],"stop_reason":null,"usage":{"input_tokens":100,"output_tokens":10}}}
+[02:24:15.100][claude][stdout] {"type":"assistant","message":{"model":"claude-opus-4-5-20251101","id":"msg_001","type":"message","role":"assistant","content":[{"type":"tool_use","id":"toolu_001","name":"Read","input":{"file_path":"/test/file.txt"}}],"stop_reason":null,"usage":{"input_tokens":110,"output_tokens":20}}}
+[02:24:15.924][claude][stdout] {"type":"user","message":{"role":"user","content":[{"type":"tool_result","content":"File contents here","is_error":false,"tool_use_id":"toolu_001"}]}}
+[02:24:16.500][claude][stdout] {"type":"result","exit_code":0,"usage":{"input_tokens":500,"output_tokens":100,"cache_read_input_tokens":200}}
+[02:24:17.000][gemini][start] command: gemini-cli --json
+[02:24:17.500][gemini][stdout] {"type":"session_start","session_id":"gemini-session-001"}
+[02:24:18.000][gemini][stdout] {"type":"text","text":"Let me analyze the code.","partial":false}
+[02:24:18.500][gemini][stdout] {"type":"tool_call","id":"call_001","name":"read_file","input":{"path":"/test/file.txt"}}
+[02:24:19.000][gemini][stdout] {"type":"tool_result","call_id":"call_001","output":"File content","success":true}
+[02:24:19.500][gemini][stdout] {"type":"session_end","usage":{"input_tokens":200,"output_tokens":50}}
+[02:24:20.000][codex][start] command: codex --stream
+[02:24:20.500][codex][stdout] {"event":"session_start","session_id":"codex-session-001"}
+[02:24:21.000][codex][stdout] {"event":"message","message":{"role":"assistant","content":[{"type":"text","text":"Processing your request."}]}}
+[02:24:21.500][codex][stdout] {"event":"message","message":{"role":"assistant","content":[{"type":"function_call","id":"fc_001","name":"shell","arguments":{"command":"ls -la"}}]}}
+[02:24:22.000][codex][stdout] {"event":"exec_result","call_id":"fc_001","output":"total 0\ndrwxr-xr-x 2 user user 40 Dec 23 02:24 .","exit_code":0}
+[02:24:22.500][codex][stdout] {"event":"session_end","usage":{"input_tokens":150,"output_tokens":75}}
+[02:24:23.000][claude][stdout] CLI banner: Welcome to Claude
+[02:24:23.100][claude][stderr] Warning: some warning message
